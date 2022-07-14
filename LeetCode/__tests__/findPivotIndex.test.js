@@ -1,3 +1,5 @@
+"use strict"
+
 const { pivotIndex } = require("../findPivotIndex");
 
 test("should return the correct pivot index", function (){
