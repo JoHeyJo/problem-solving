@@ -34,7 +34,7 @@ var maxSubArray = function (nums) {
 //   let max = -Infinity; // no max when we start so anything will be the new max 
 
 //   for (let i = 0; i < nums.length; i++) { // loop through in vanilla way starting at 0 and going to end by 1
-//     const curr = nums[i]; // set our current value as a variable to make it easy to understand 
+//     const cur..r = nums[i]; // set our current value as a variable to make it easy to understand 
 //     prev = Math.max(prev + curr, curr); // basically poses the question: build or start over?
 //     max = Math.max(prev, max) // basically poses the question: update max or not? 
 //   }
