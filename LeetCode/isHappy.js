@@ -25,7 +25,7 @@ var isHappy = function (n) {
 };
 
 function sumOfSquares(n) {
-  let splitNums = [...n + ''];
+  let splitNums = [...n + ''];//turns 123 => ['1','2','3' ]
   let nums = splitNums.map(Number);
   return nums.reduce((acc, next) => acc += next ** 2, 0);
 }
