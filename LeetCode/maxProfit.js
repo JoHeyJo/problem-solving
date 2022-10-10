@@ -16,19 +16,29 @@
  */
 
 
+// var maxProfit = function (prices) {
+//   let buy = prices[0];
+//   let profit = 0;
+//   for (let i = 0; i < prices.length; i++) {
+//     if (prices[i] < buy) {
+//       buy = prices[i];
+//     } else {
+//       profit = Math.max(prices[i] - buy, profit);
+//     }
+//   }
+//   return profit;
+// };
+
 var maxProfit = function (prices) {
   let buy = prices[0];
-  let profit = 0;
-  for (let i = 0; i < prices.length; i++) {
-    if (prices[i] < buy) {
-      buy = prices[i];
-    } else {
-      profit = Math.max(prices[i] - buy, profit);
-    }
-  }
-  return profit;
-};
+  let maxProfit = 0;
 
+  for (let i = 0; i < prices.length; i++) {
+    if (buy > prices[i]) buy = prices[i];
+    maxProfit = Math.max(maxProfit, prices[i] - buy)
+  }
+  return maxProfit;
+};
 module.exports = { maxProfit };
 
 
@@ -36,3 +46,4 @@ module.exports = { maxProfit };
 //  Best Time to Buy and Sell Stock.
 // Memory Usage: 51.9 MB, less than 38.20 % of JavaScript online submissions 
 // for Best Time to Buy and Sell Stock.
+

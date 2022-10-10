@@ -16,26 +16,42 @@
  * @return {boolean}
  */
 var isValid = function (s) {
-  const stack = [];
-  const parens = {
+  const stack = []
+  const closeMap = {
     ')': '(',
-    ']': '[',
     '}': '{',
+    ']': '['
   }
-
   for (let c of s) {
-    if (parens[c]) {
-      if (stack.length && stack[stack.length - 1] === parens[c]) {
-        stack.pop()
-      } else {
-        return false;
-      }
-    } else {
+    if (!closeMap[c]) {
       stack.push(c);
+    } else {
+      if (stack.pop() !== closeMap[c] || s.length == 1) return false;
     }
   }
   return stack.length === 0;
 };
+// var isValid = function (s) {
+//   const stack = [];
+//   const parens = {
+//     ')': '(',
+//     ']': '[',
+//     '}': '{',
+//   }
+
+//   for (let c of s) {
+//     if (parens[c]) {
+//       if (stack.length && stack[stack.length - 1] === parens[c]) {
+//         stack.pop()
+//       } else {
+//         return false;
+//       }
+//     } else {
+//       stack.push(c);
+//     }
+//   }
+//   return stack.length === 0;
+// };
 
 
 module.exports = { isValid };
