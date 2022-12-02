@@ -18,12 +18,12 @@ var twoSumII = function (numbers, target) {
 };
 
 
-module.exports = { twoSumII };
 
 // Runtime: 77 ms, faster than 79.07 % of JavaScript online submissions for 
 // Two Sum II - Input Array Is Sorted.
 // Memory Usage: 43.3 MB, less than 12.95 % of JavaScript online submissions
 //  for Two Sum II - Input Array Is Sorted.
+module.exports = { twoSumII };
 
 // two pointer ===> exceeds time limit
 
