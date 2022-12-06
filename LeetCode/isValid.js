@@ -9,28 +9,43 @@
 // Open brackets must be closed in the correct order.
 
 
-
+const map = {
+  "}": "{",
+  "]": "[",
+  ")": "("
+}
+const stack = [];
+for (let paren of s) {
+  if (!map[paren]) stack.push(paren);
+  if (map[paren]) {
+    if (map[paren] !== stack.pop()) {
+      return false;
+    }
+  }
+}
+return stack.length === 0;
 
 /**
  * @param {string} s
  * @return {boolean}
  */
-var isValid = function (s) {
-  const stack = []
-  const closeMap = {
-    ')': '(',
-    '}': '{',
-    ']': '['
-  }
-  for (let c of s) {
-    if (!closeMap[c]) {
-      stack.push(c);
-    } else {
-      if (stack.pop() !== closeMap[c] || s.length == 1) return false;
-    }
-  }
-  return stack.length === 0;
-};
+// var isValid = function (s) {
+//   const stack = []
+//   const closeMap = {
+//     ')': '(',
+//     '}': '{',
+//     ']': '['
+//   }
+//   for (let c of s) {
+//     if (!closeMap[c]) {
+//       stack.push(c);
+//     } else {
+//       if (stack.pop() !== closeMap[c] || s.length == 1) return false;
+//     }
+//   }
+//   return stack.length === 0;
+// };
+
 // var isValid = function (s) {
 //   const stack = [];
 //   const parens = {
