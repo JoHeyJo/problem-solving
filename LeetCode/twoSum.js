@@ -33,3 +33,14 @@ module.exports = { twoSum }
 
 // Runtime: 108 ms, faster than 62.73 % of JavaScript online submissions for Two Sum.
 // Memory Usage: 42.6 MB, less than 51.46 % of JavaScript online submissions for Two Sum.
+
+// var twoSum = function (nums, target) {
+//   for (let i = 0; i < nums.length; i++) {
+//     for (let j = 0; j < nums.length; j++) {
+//       if (j !== i) {
+//         let sum = nums[j] + nums[i];
+//         if (sum === target) return [i, j]
+//       }
+//     }
+//   }
+// };
