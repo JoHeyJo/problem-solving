@@ -28,3 +28,31 @@ module.exports = { climbStairs };
 // Climbing Stairs.
 // Memory Usage: 41.5 MB, less than 88.19 % of JavaScript online submissions
 //  for Climbing Stairs.
+
+
+//  Solving using brute force/recursive approach, with memoization
+var climbStairs = function (n, climbedSteps = {}) {
+  if (climbedSteps[n]) return climbedSteps[n];
+  if (n === 0) return 1;
+  if (n < 0) return 0;
+
+
+  let total = climbStairs(n - 1, climbedSteps) + climbStairs(n - 2, climbedSteps);
+
+  climbedSteps[n] = total;
+
+  return total;
+};
+
+//  Solving using brute force/ recursive approach, not really DP solution : Time Limit Exceeded
+var climbStairs = function (n) {
+  let oneStep = n - 2;
+  let twoStep = n - 1;
+
+  if (n === 0) return 1;
+  if (n < 0) return 0;
+
+  total = climbStairs(oneStep) + climbStairs(twoStep);
+
+  return total;
+};
