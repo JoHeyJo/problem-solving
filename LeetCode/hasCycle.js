@@ -20,3 +20,14 @@ var hasCycle = function (head) {
   return false;
 };
 
+// tortise and hare algo with a slow and fast pointer
+var hasCycle = function (head) {
+  let [slow, fast] = [head, head]
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+    if (slow === fast) return true;
+  }
+  return false;
+};
+
